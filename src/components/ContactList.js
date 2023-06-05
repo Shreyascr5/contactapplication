@@ -2,9 +2,13 @@ import React from "react";
 import Contact from "./Contact";
 
 export default function ContactList(props){
+    const deleteContactHandler=(id)=>{
+        props.getContactId(id);
+    };
+
     const renderContactList=props.contacts.map((contact)=>{
         return(
-            <Contact contact={contact}/>
+            <Contact contact={contact} clickHandler={deleteContactHandler} key={contact.id}/>
         )})
    
 
